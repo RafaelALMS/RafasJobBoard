@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f4f6fa;
+  --surface: #ffffff;
+  --line: #e2e8f0;
+  --fg: #101725;
+  --muted: #5b6577;
+  --accent: #2563eb;
+  --good: #15803d;
+  --warn: #b45309;
+  --bad: #b91c1c;
+  --shadow: 0 1px 2px rgb(16 24 40 / 0.06);
+}
+
+.dark {
+  --bg: #0a0e15;
+  --surface: #121a27;
+  --line: #26303f;
+  --fg: #e7ecf4;
+  --muted: #93a1b5;
+  --accent: #60a5fa;
+  --good: #4ade80;
+  --warn: #fbbf24;
+  --bad: #f87171;
+  --shadow: 0 1px 3px rgb(0 0 0 / 0.45);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-good: var(--good);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Helvetica Neue", sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.85;
+}
+input[type="range"] {
+  accent-color: var(--accent);
+}
+input[type="checkbox"] {
+  accent-color: var(--accent);
+}
+
+/* Job description HTML */
+.job-html p {
+  margin: 0.65em 0;
+  line-height: 1.65;
+}
+.job-html ul,
+.job-html ol {
+  margin: 0.65em 0;
+  padding-left: 1.35em;
+  list-style: disc;
+}
+.job-html ol {
+  list-style: decimal;
+}
+.job-html li {
+  margin: 0.3em 0;
+  line-height: 1.6;
+}
+.job-html h3,
+.job-html h4 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 1.1em 0 0.4em;
+}
+.job-html a {
+  color: var(--accent);
+}
+.job-html strong,
+.job-html b {
+  font-weight: 650;
+}
+.job-html blockquote {
+  border-left: 3px solid var(--line);
+  padding-left: 0.9em;
+  color: var(--muted);
+  margin: 0.7em 0;
+}
